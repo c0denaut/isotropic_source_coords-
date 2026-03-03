@@ -17,9 +17,11 @@ class Isotropic:
         Переменные на вход
         n: количество векторов
         """
+
         self.n = n
         if n <= 0:
-            sys.exit("Error. Неположительно значение количества векторов")
+            raise ValueError(f"Неположительное значение количества векторов")
+
 
     def vectors(self):
         """
@@ -51,19 +53,15 @@ class Isotropic:
         """
         vectors = self.vectors()
 
-        # Создание 3D графика
         fig = plt.figure(figsize=(10, 8))
         ax = fig.add_subplot(111, projection='3d')
 
-        # Координаты для построения точек
         x = vectors[:, 0]
         y = vectors[:, 1]
         z = vectors[:, 2]
 
-        # Построение точек на сфере
         ax.scatter(x, y, z, c='blue', marker='o', alpha=0.6, s=30)
 
-        # Добавление сферы для наглядности
         u = np.linspace(0, 2 * np.pi, 50)
         v = np.linspace(0, np.pi, 50)
         sphere_x = np.outer(np.cos(u), np.sin(v))
@@ -72,10 +70,11 @@ class Isotropic:
 
         ax.plot_wireframe(sphere_x, sphere_y, sphere_z, color='gray', alpha=0.2)
 
-        # Настройка графика
         ax.set_xlabel('X')
         ax.set_ylabel('Y')
         ax.set_zlabel('Z')
         ax.set_title(f'Изотропное распределение {self.n} векторов на сфере')
 
         plt.show()
+        plt.show()
+
