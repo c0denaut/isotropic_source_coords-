@@ -76,5 +76,5 @@ class Isotropic:
         ax.set_title(f'Изотропное распределение {self.n} векторов на сфере')
 
         plt.show()
-        plt.show()
+
 
