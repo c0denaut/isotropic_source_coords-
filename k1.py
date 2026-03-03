@@ -2,7 +2,6 @@ import random
 import numpy as np
 from math import sqrt
 import matplotlib.pyplot as plt
-import sys
 
 
 class Isotropic:
@@ -76,5 +75,6 @@ class Isotropic:
         ax.set_title(f'Изотропное распределение {self.n} векторов на сфере')
 
         plt.show()
+
 
 
